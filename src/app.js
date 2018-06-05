@@ -4,7 +4,7 @@ console.log("app.js is running!");
 var app = {
     title: 'Indecision App',
     subtitle: 'Zadania na wczoraj!',
-    options: ['One', 'Two']
+    options: []
 };
 var template = (
     <div>
