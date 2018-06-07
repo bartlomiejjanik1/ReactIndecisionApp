@@ -27,22 +27,29 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+    handlePick(){
+        alert('HandlePicked odpalono guzik');
+    }
     render() {
         return (
             <div>
-                <button>Co powinienem zrobic?</button>
+                <button onClick={this.handlePick}>Co powinienem zrobic?</button>
             </div>
         );
     }
 }
 
-
 class Options extends React.Component {
+    handleRemoveAll() {
+        alert('usune wszystko!');
+    }
     render () {
         return (
             <div>
-                {this.props.options.length}
-                <Option />
+                <button onClick={this.handleRemoveAll}>Usun wszystko!</button>
+                {
+                    this.props.options.map((option) => <Option key={option} optionText={option} />)
+                }
             </div>
         );
     }
@@ -52,17 +59,29 @@ class Option extends React.Component {
     render () {
         return (
             <div>
-                Komponent Option jako nested komponent w Optionsssss
+                Option: {this.props.optionText}
             </div>
         );
     }
 }
 
 class AddOption extends React.Component {
+    handleAddOption(e){
+        e.preventDefault();
+
+        const option = e.target.elements.option.value.trim();
+
+        if (option) {
+            alert(option);
+        }
+    }
     render () {
         return (
             <div>
-                Komponent o nazwie AddOption
+                <form onSubmit={this.handleAddOption}>
+                <input type="text" name="option" />
+                <button>Dodaj zadanie</button>
+                </form>
             </div>
         );
     }
