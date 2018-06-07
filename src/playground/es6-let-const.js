@@ -1,9 +1,9 @@
-var nameVar = 'Bart';
+const nameVar = 'Bart';
 
 
 console.log('nameVar', nameVar);
 
-let nameLet = 'Jen';
+const nameLet = 'Jen';
 console.log('nameLet', nameLet);
 
 const nameConst = 'Frank';
@@ -11,7 +11,8 @@ const nameConst = 'Frank';
 console.log('nameConst', nameConst);
 
 //Block scoping
-var fullName = 'Barteczek J';
+const
+ fullName = 'Bartekk J';
 
 if (fullName){
     var firstName = fullName.split(' ')[0];
